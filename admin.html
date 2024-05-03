@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 800px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
+        }
+        .list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .list li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .list li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Admin Page</h2>
+        <ul id="user-list" class="list">
+        </ul>
+    </div>
+
+    <script>
+        let users = localStorage.getItem('users') ? JSON.parse(localStorage.getItem('users')) : {};
+
+        let userList = document.getElementById('user-list');
+        for (let user in users) {
+            let listItem = document.createElement('li');
+            listItem.innerHTML = `Username: ${user}, Password: ${users[user]}`;
+            userList.appendChild(listItem);
+        }
+    </script>
+</body>
+</html>
