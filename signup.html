@@ -58,7 +58,7 @@
                 <button type="submit">Sign up</button>
             </div>
             <p id="signup-error"></p>
-            <p>Already have an account? <a href="login.html" id="login-link">Login</a></p>
+            <p>Already have an account? <a href="index.html" id="login-link">Login</a></p>
         </form>
     </div>
 
@@ -73,7 +73,7 @@
                 users[newUsername] = newPassword;
                 localStorage.setItem('users', JSON.stringify(users));
                 document.getElementById('signup-error').innerHTML = 'Sign up successful!';
-                window.location.href = 'login.html';
+                window.location.href = 'index.html';
             } else {
                 document.getElementById('signup-error').innerHTML = 'Please fill in all fields';
             }
